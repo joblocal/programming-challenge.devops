@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+NGINX_CONF="/etc/nginx/nginx.conf"
+
+/usr/sbin/nginx -c $NGINX_CONF -t && exec nginx -c $NGINX_CONF

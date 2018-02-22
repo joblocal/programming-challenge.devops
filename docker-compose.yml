@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  app:
+    build:
+      context: ./docker/app
+    image: joblocal/microservice:latest
+    container_name: app.microservice.internal
+    volumes:
+      - "$PWD:/var/www"
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+  worker:
+    build:
+      context: ./docker/worker
+    image: joblocal/microservice-worker:latest
+    container_name: worker.microservice.internal
+    volumes:
+      - "$PWD:/var/www"
+    env_file:
+      - .env

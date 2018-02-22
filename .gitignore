@@ -1,0 +1,5 @@
+.env
+/vendor
+/database/database.sqlite
+/storage/logs/lumen.log
+cghooks.lock
